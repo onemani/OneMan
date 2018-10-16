@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="OneMan:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="OneMan-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="OneMan:war exploded" />
+    </root>
+  </artifact>
+</component>
