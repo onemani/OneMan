@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>数据校验方式</title>
+</head>
+<body>
+<form id="myForm">
+    姓名：<input type="text" name="name"/>
+    年龄:<input type="number" name="age"/>
+</form>
+<button onclick="submitData()">确定</button>
+</body>
+<script src="../../jquery/jquery.min.js" data-th-src="@{jquery/jquery.min.js}"></script>
+<script src="../../jquery/jquery.serialize.js" data-th-src="@{jquery/jquery.serialize.js}"></script>
+<script src="../../jquery/jquery.validate.min.js" data-th-src="@{jquery/jquery.validate.min.js}"></script>
+<script>
+    function submitData() {
+        var params = $("#myForm").serializeObject();
+        $.post("/submit/data", params)
+            .then(data => {
+                console.log(data.name);
+                console.log(data.age);
+            })
+            .fail(function () {
+                console.log("返回错误")
+            })
+    }
+
+</script>
+</html>
